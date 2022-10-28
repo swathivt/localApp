@@ -31,21 +31,148 @@ body{
 
 .form_input{
     width: 60%;
+
 }
 
-.footer{
+/**************************************homePage********************************************************************/
+
+body {
+    background-color: white;
+}
+
+
+/**************************************signup********************************************************************/
+
+
+.signUp{
+    background-color: #FFFFFF;
+}
+.signUp h3 {
+    
     text-align: center;
+    color:  #fccc49;
+    /* color; #fccc49; // rgb(252,204,73) */
+    
+}
+
+.userInput{
+    display: flex;
+    flex-direction: column;
+    color:  rgb(106, 129, 147);
+}
+.userDetails {
+    display: flex;
+   flex-direction: row;
+   justify-content:center ;
+    
+
+    column-gap: 15px;
+    margin: 30px;
+    padding: 5px;
+    
+}
+.email {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    padding-right: 0px;
+}
+
+/**************************************footer********************************************************************/
+
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    height: 140px;
+    width: 100%;
+    background-color: rgb(106, 129, 147);
+    color: white;
+  
+}
+
+#footer div {
+    
+     margin: 0 auto;
+    max-width: 960px;
+     overflow: hidden; 
+     padding: 59px 0 13px; 
+} 
+
+#footer div p {
+    color: #FFFFFF;
+    display: block;
+    margin: 0;
+    padding: 33px 0 50px;
+    /* font-family: roboto-regular-webfont; */
+	font-size: 12px;
+    font-weight: normal;
+	/* line-height: 15px; */
+    /* text-align: center; */
+	text-transform: none
+}
+
+#footer div .connect {
+    display: block;
+    height: 30px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    max-width: none;
+    width: 240px;
+}
+
+#footer div .connect a {
+    background: url(../images/icons.png) no-repeat;
+    display: block;
+    float:left;
+    height: 30px; 
+    margin: 0 15px;
+    padding: 0;
+    text-indent: -99999px;
+    width: 30px; 
+     
+    
+}
+
+#footer div .connect a.facebook {
+	background-position: 0 0;
+}
+#footer div .connect a.googleplus {
+	background-position: 0 -32px;
+}
+#footer div .connect a.pinterest {
+	background-position: 0 -64px;
+}
+#footer div .connect a.twitter {
+	background-position: 0 -96px;
 }
 
 /**************************************NavBar********************************************************************/
 
 nav {
 	display: flex;
-	align-items: center;
+    flex-direction: row;
+	justify-content: space-between;
+    background-color: rgb(106, 129, 147);
+    
 }
 
 nav a{
 	margin-left: 10px;
+    color:hsl(0, 0%, 95%);
+    text-decoration: none;
+
+}
+.logo {
+    margin: 20px;
+    width: 100px;
+    height: 25px;
+}
+.navLinks{
+    margin: 20px;
 }
 
 form.signup, form.login {

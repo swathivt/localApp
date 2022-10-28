@@ -13,10 +13,11 @@ export class Footer extends React.Component {
 
         const mediaLinks = socialMediaLinks.map(link => {
             return (
-                <a href={'/' + link.aLink} className={link.cName}>{link.linkName}
-                </a>
+                    <a href={'/' + link.aLink} className={link.cName}>{link.linkName}
+                    </a>
             )
         }
+       
         );
 
         const footerSection = (
