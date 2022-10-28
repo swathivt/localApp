@@ -40,6 +40,42 @@ body {
     background-color: white;
 }
 
+.container {
+    margin: 10px 20px 10px 20px;
+    
+}
+
+#header {
+	display: flex;
+    flex-direction: row;
+	justify-content: space-between;
+    background-color: rgb(106, 129, 147);
+    padding: 30px;
+    
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+}
+
+#headerItems {
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.menuItem {
+    height: 50px;
+    text-decoration: none;
+    color: white;
+    padding: 20px 10px;
+
+    font-size: 20px;
+}
+
+
 
 /**************************************signup********************************************************************/
 
@@ -160,20 +196,15 @@ nav {
     
 }
 
+
 nav a{
 	margin-left: 10px;
     color:hsl(0, 0%, 95%);
     text-decoration: none;
 
 }
-.logo {
-    margin: 20px;
-    width: 100px;
-    height: 25px;
-}
-.navLinks{
-    margin: 20px;
-}
+
+
 
 form.signup, form.login {
 	max-width: 400px;

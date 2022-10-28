@@ -3,10 +3,15 @@ const router = express.Router();
 const signup = require('../models/signup.js');
 
 
-router.get('/', async (req,res) => {
-   await console.log("Welcome...");
-  // res.data("{'key' : 'valuerk'}");
-  res.json({'key' : 'valuerk'});
+router.get('/',  (req,res) => {
+   // To reslove cors issue (XMLHttpRequest)
+   res.header( {
+      "Access-Control-Allow-Origin": "http://localhost:3000" ,
+         "mode":"no-cors" }
+   );
+    console.log("Welcome...");
+   res.json("{'key' : 'valuerk'}");
+//res.json({'key' : 'valuerk'});
 })
 
 router.post('/signup', (req,res) => {

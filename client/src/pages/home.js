@@ -1,15 +1,17 @@
 import React from "react";
 import axios from "axios";
 import { NavBar } from "../components/sections/navBar.js";
+import { Footer } from "../components/sections/footer.js";
 
 export class Home extends React.Component {
   render() {
     return (
-      <div className="bodyTag">
+      <div id="pageContainer">
         <NavBar />
-        <div className="home">
+        <div className="container">
           <h3>Restaurants Listing</h3>
         </div>
+        {/* <Footer />  */}
       </div>
     );
   }
@@ -19,14 +21,16 @@ export class Home extends React.Component {
 
     const apiMgr = axios.create({ responseType: "json" });
     apiMgr
-      .get("http://localhost:5000/", { headers: {} })
+      .get("http://localhost:5000/")
       .then((response) => {
         // this.setState({ todos: response.data });
-        console.log("succccesssss");
+
+        console.log("succccesssss : " + response.data);
       })
       .catch(function (error) {
         console.log("ooopppppppssssss");
-        console.log(error);
+        console.log(error.response.data);
+
       });
 
     console.log("after call");

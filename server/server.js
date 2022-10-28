@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 //const cors = require('cors');
 // require('dotenv').config({ path: "./config.env" });
  const mongoose = require('mongoose');
-
+ //app.use(cors);
 //  const port = process.env.PORT;
 
 // const db = process.env.ATLAS_URI;
@@ -17,7 +17,7 @@ connection.once('open', function() {
         console.log("MongoDB database connection established successfully");
 })
 
- //app.use(cors);
+ 
  app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
      extended: true}));

@@ -21,7 +21,6 @@ export class Footer extends React.Component {
         );
 
         const footerSection = (
-            <div id="footer">
                 <div>
                     <div className="connect">
                         {mediaLinks}
@@ -31,12 +30,11 @@ export class Footer extends React.Component {
                     
 
                 </div>
-            </div>
 
         );
 
 
-        return <nav>{footerSection}</nav>;
+        return <div id="footer">{footerSection}</div>;
 
 
 

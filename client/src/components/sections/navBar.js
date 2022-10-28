@@ -1,34 +1,30 @@
-
-import React from 'react';
-import { Logo } from './logo.js';
-import { Link } from 'react-router-dom';
-
+import React from "react";
+import { Logo } from "./logo.js";
+import { Link } from "react-router-dom";
 
 export function NavBar() {
   return (
-    <div>
-      
-      <nav>
-        <div >
-          <img className = "logo" src="localAppLogo.png" alt="localApp" ></img>
+    <div id="header">
+        <div>
+          <img className="logo" src="localAppLogo.png" alt="localApp"></img>
         </div>
-        <div className='navLinks'>
-          <Link  to="/signUp">SignUp</Link >
-          <Link  to="/logIn">Login</Link >
-          <Link  to="/logout">Logout</Link >
-          <Link  to="/contactus">ContactUs</Link >
-
+        <div className="headerItems">
+          <Link className="menuItem" to="/signUp">
+            SignUp
+          </Link>
+          <Link className="menuItem" to="/logIn">
+            Login
+          </Link>
+          <Link className="menuItem" to="/logout">
+            Logout
+          </Link>
+          <Link className="menuItem" to="/contactus">
+            ContactUs
+          </Link>
         </div>
-      </nav>
-
-      
     </div>
   );
 }
-
-
-
-
 
 // export class NavBar extends React.Component {
 //   render() {
@@ -43,7 +39,6 @@ export function NavBar() {
 //         </li>
 //       )
 //     });
-    
 
 //     const headerSection = (
 //       <div id="header">
