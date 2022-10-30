@@ -1,26 +1,29 @@
 const express = require('express');
 const router = express.Router();
 const signup = require('../models/signup.js');
+require('dotenv').config({ path: "./config.env" });
+const axios = require('axios');
+
+const apiKey = process.env.APIKEY;
 
 
-router.get('/',  (req,res) => {
+router.get('/restaurants', async (req,res) => {
    // To reslove cors issue (XMLHttpRequest)
    res.header( {
       "Access-Control-Allow-Origin": "http://localhost:3000" ,
          "mode":"no-cors" }
    );
     console.log("Welcome...");
-   res.json("{'key' : 'valuerk'}");
-//res.json({'key' : 'valuerk'});
+
+    var restaurantData = await placesNearByClientLib();
+    res.json( {restaurants: restaurantData});
 })
 
-router.post('/signup', (req,res) => {
+router.post('/signup',  (req,res) => {
    console.log("Server - Signup Post method");
     const signedUpUser = new signUp({
 
-            // name: req.body.name,
-            // email: req.body.email,
-            // rollno: req.body.rollno
+
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         emailAddress: req.body.emailAddress,
@@ -35,5 +38,27 @@ router.post('/signup', (req,res) => {
      })
     
 })
+
+
+
+async function placesNearByClientLib() {
+  var restaurantData;
+
+  var config = {
+    method: "get",
+    url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&key=" + apiKey  ,
+    headers: {},
+  };
+
+  await axios(config)
+    .then(function (response) {
+      restaurantData = response.data
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  return restaurantData;
+}
 
 module.exports = router

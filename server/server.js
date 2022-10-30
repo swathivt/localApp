@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 // require('dotenv').config({ path: "./config.env" });
  const mongoose = require('mongoose');
  //app.use(cors);
-//  const port = process.env.PORT;
+ const port = process.env.PORT;
 
 // const db = process.env.ATLAS_URI;
 // mongoose.connect(db,{ useNewUrlParser: true });

@@ -4,8 +4,11 @@ const { check, validationResult } = require("express-validator");
 const router = express.Router();
 const { Client } = require("@googlemaps/google-maps-services-js");
 const axios = require("axios");
+require('dotenv').config({ path: "./config.env" });
+
 
 const Registration = mongoose.model("signup");
+const db = process.env.ATLAS_URI;
 let userDoc = mongoose.model("Registration");
 
 let session;

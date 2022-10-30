@@ -34,6 +34,53 @@ body{
 
 }
 
+a:hover{
+    border-bottom: 0.1px solid lightgrey;
+    color: rgba(206, 59, 14, 0.836);
+    
+    cursor: pointer;
+  }
+
+/**************************************Restaurants Listing Begin ********************************************************************/
+
+.restaurantItem {
+  
+  text-decoration: none;
+  list-style-type: none;
+  padding-left: 30px;
+  border-bottom: 0.1px solid rgb(144, 143, 143);
+
+  background-color: rgb(248, 243, 243);
+ 
+  padding: 5px;
+  margin: 10px;
+}
+
+li:hover{
+  color:rgb(237, 237, 232);
+  border-bottom: 0.1px solid lightgrey;
+  background-color:  rgb(237, 105, 105);
+  height: 50px;
+  cursor: pointer;
+}
+.restaurantName{
+  margin-left: 5px;
+  font-size: large;
+}
+
+.restaurantRating{
+  margin-left: 10px;
+}
+
+a:hover{
+  border-bottom: 0.1px solid lightgrey;
+  color: rgba(206, 59, 14, 0.836);
+  
+  cursor: pointer;
+}
+
+/**************************************Restaurants Listing End ********************************************************************/
+
 /**************************************homePage********************************************************************/
 
 body {
