@@ -18,10 +18,18 @@ export function NavBar() {
           <Link className="menuItem" to="/logout">
             Logout
           </Link>
+          <Link className="menuItem" to="/postrequest">
+            PostRequest
+          </Link>
           <Link className="menuItem" to="/contactus">
             ContactUs
           </Link>
-        </div>
+          <Link className="menuItem" to="/secured">
+            Secured
+          </Link>
+          
+          
+         </div>
     </div>
   );
 }

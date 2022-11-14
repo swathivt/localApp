@@ -6,14 +6,22 @@ import { Restaurants } from "../components/restaurants.js";
 import { Banner } from "../components/banner.js";
 
 
+
+
 export class Home extends React.Component {
   render() {
     return (
+
+      
       <div id="pageContainer">
         <NavBar />
-        <Banner />
+        {/* <Banner /> */}
         <div className="container">
-          {/* <Restaurants /> */}
+          {}
+          <h3>Welcome to LocalApp</h3>
+          <Restaurants />
+         
+
           
         </div>
         <Footer />

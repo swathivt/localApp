@@ -34,8 +34,20 @@ export class Restaurants extends React.Component {
 
   componentDidMount() {
     const apiMgr = axios.create({ responseType: "json" });
+
     apiMgr
-      .get("http://localhost:5000/restaurants")
+      .get("http://localhost:5000/user", {  })
+      .then((response) => {
+        //this.setState({ restaurants: response.data.restaurants.results });
+        console.log("RESPONSE from /user : " + JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error.response.data);
+      });
+  
+
+    apiMgr
+      .get("http://localhost:5000/restaurants", { withCredentials: true })
       .then((response) => {
         this.setState({ restaurants: response.data.restaurants.results });
       })

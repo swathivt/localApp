@@ -1,3 +1,52 @@
+
+What you need to run this code
+Frontend:  axios(for making api calls)
+           bootstrap(for User Interface)
+           react,
+           react-dom,
+           react-router-dom(To handle routing)
+           react-bootstrap(for User Interface)       
+         
+
+######################################################################
+Backend: body-parser
+         connect-mongo-db-session
+         cookie-parser
+         cors
+         dotenv
+         express
+         express-session
+         express-validator
+         goole-maps-services-js
+         graphsql
+         mongodb
+         mongoose
+         mongoose-findorcreate
+         nodemon
+         passport
+         passport-google-oauth2
+         passport-local
+         passport-local-mongoose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
