@@ -48,9 +48,15 @@ This application is built using MERN stack.
          <li>passport-google-oauth2</li>
          <li>passport-local</li>
          <li>passport-local-mongoose</li>
-		</ul>		
-		<h2>Google OAuth API</h2>
-		<p>Authentication with Google.</p>		
-		<h2>Google Places API</h2>
-		<p>Google Places API used to display the restaurants near by user.</p>
+	</ul>		
+	<h2>Google OAuth API</h2>
+	<p>Authentication with Google.</p>		
+	<h2>Google Places API</h2>
+	<p>Google Places API used to display the restaurants near by user.</p>
+	<h2>How to start the application</h2>
+	<p>To start the middleware go to Server folder and use the below command to bring the middleware up. The server is configured to listen at port 5000.</p>
+	<ul><li>npm start</li></ul>
+	<p>To start the frontend go to Client folder and use the below command to bring the frontend server up. The react frontend is configured to listen at port 3000.</p>
+	<ul><li>npm start</li></ul>
+	
 		
