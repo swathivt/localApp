@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   firstname: { type: String, required: true },
   lastname: { type: String, required: true },
   password: { type: String },
-  signupby: { type: String },
+  signupby: { type: String1 },
   socialmediaid: { type: String },
   created: { type: Date, default: Date.now },
   updated: { type: Date },
