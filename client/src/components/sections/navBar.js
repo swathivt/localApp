@@ -15,11 +15,14 @@ export function NavBar() {
           <Link className="menuItem" to="/logIn">
             Login
           </Link>
+          <Link className="menuItem" to="/user/myAccount">
+            MyAccount
+          </Link>
           <Link className="menuItem" to="/logout">
             Logout
           </Link>
-          <Link className="menuItem" to="/postrequest">
-            PostRequest
+          <Link className="menuItem" to="/request/create">
+          CreateStudent
           </Link>
           <Link className="menuItem" to="/contactus">
             ContactUs

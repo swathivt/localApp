@@ -71,7 +71,7 @@
         <div className="userDetails">
           <label className="userInput">First Name:</label>
           <input
-            type="firstName"
+            type="firstName1"
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
             />

@@ -311,3 +311,25 @@ nav a{
     font-weight: bold;
     font-family: 'Roboto',arial,sans-serif;
   }
+
+/**************************************MyAccount********************************************************************/
+ 
+#myAccountLinks {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ }
+
+ /*************************************MyRequests********************************************************************/
+ .requestTable{
+    display: flex;
+    flex-direction: column;
+    
+ }
+ .headerLink {
+    display: flex;
+    margin-bottom: 50px;
+    flex-direction: row;
+    justify-content: space-around;
+ }

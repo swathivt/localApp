@@ -10,22 +10,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-
-    // const apiMgr = axios.create({ responseType: "json" });
-    // apiMgr
-    //   //.get("http://localhost:5000/restaurants")
-    //   .get("http://localhost:5000/auth/google")
-    //   .then((response) => {
-    //    // this.setState({ restaurants: response.data.restaurants.results });
-    //   })
-    //   .catch(function (error) {
-    //     //console.log(error.response.data);
-    //   });
-
-    // console.log(email, password);
-
-    window.open(
+     window.open(
         `http://localhost:5000/auth/google`,
         "_self"
     );

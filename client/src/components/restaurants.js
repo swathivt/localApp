@@ -26,17 +26,11 @@ export class Restaurants extends React.Component {
     );
   }
 
-  restaurantsList() {
-    return this.state.restaurants.map(function (currentRestaurant, i) {
-      return <RestaurantListItem restaurant={currentRestaurant} key={i} />;
-    });
-  }
-
   componentDidMount() {
     const apiMgr = axios.create({ responseType: "json" });
 
     apiMgr
-      .get("http://localhost:5000/user", {  })
+      .get("http://localhost:5000/user", {})
       .then((response) => {
         //this.setState({ restaurants: response.data.restaurants.results });
         console.log("RESPONSE from /user : " + JSON.stringify(response.data));
@@ -44,7 +38,6 @@ export class Restaurants extends React.Component {
       .catch(function (error) {
         console.log(error.response.data);
       });
-  
 
     apiMgr
       .get("http://localhost:5000/restaurants", { withCredentials: true })
@@ -54,5 +47,11 @@ export class Restaurants extends React.Component {
       .catch(function (error) {
         console.log(error.response.data);
       });
+  }
+
+  restaurantsList() {
+    return this.state.restaurants.map(function (currentRestaurant, i) {
+      return <RestaurantListItem restaurant={currentRestaurant} key={i} />;
+    });
   }
 }

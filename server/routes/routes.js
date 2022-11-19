@@ -2,6 +2,8 @@ const express = require("express");
 const session = require("express-session");
 const router = express.Router();
 const signup = require("../models/user.js");
+const UserRequest = require("../models/userRequest");
+
 require("dotenv").config({ path: "./config.env" });
 const axios = require("axios");
 const passport = require("passport");
@@ -10,28 +12,28 @@ const passport = require("passport");
 const apiKey = process.env.APIKEY;
 
 checkAuthenticated = (req, res, next) => {
- // console.log("In checkAuthenticated* method USER - REQ: " + JSON.stringify(req.session.user));
-  if(req.session.user) {
-  console.log("InSIDE checkAuthenticated* method")
-    
+  // console.log("In checkAuthenticated* method USER - REQ: " + JSON.stringify(req.session.user));
+  if (req.session.user) {
+    console.log("InSIDE checkAuthenticated* method");
+
     return next();
   } else {
     res.redirect("http://localhost:3000/");
   }
-}
+};
 
-router.get('/isAuth', async (req, res) => {
-  if(req.user) {
-    return res.json(req.user)
+router.get("/isAuth", async (req, res) => {
+  if (req.user) {
+    return res.json(req.user);
   } else {
-    return res.status(401).json('unauthorize')
+    return res.status(401).json("unauthorize");
   }
 });
 
 router.get("/restaurants", async (req, res) => {
-  console.log('#################req.session : ', req.session);
+  console.log("#################req.session : ", req.session);
   console.log("Welcome...aaa: " + req.session.user);
-  
+
   var restaurantData = await placesNearByClientLib();
   //console.log(restaurantData);
   res.json({ restaurants: restaurantData });
@@ -48,7 +50,7 @@ router.get(
 
 router.get(
   "/auth/google",
-  passport.authenticate("google", { scope: [ 'email', 'profile' ] })
+  passport.authenticate("google", { scope: ["email", "profile"] })
 );
 
 router.get("/login/failed", (req, res) => {
@@ -80,27 +82,30 @@ router.get(
     // Successful authentication, redirect secrets.
     console.log("SUCCESS.....2" + JSON.stringify(req.user));
     req.session.user = req.user;
-    console.log("From User Session######### :" + JSON.stringify(req.session.user));
+    console.log(
+      "From User Session######### :" + JSON.stringify(req.session.user)
+    );
     res.redirect("http://localhost:3000");
   }
 );
+
+// *****************************************user********************************************** //
 
 router.get("/user", (req, res) => {
   console.log("Inside route /user :" + JSON.stringify(req.session));
   if (req.session.user) {
     console.log("Inside INSIDE route /user :");
-      res.json(req.user);
+    res.json(req.user);
   } else {
-    console.log('************************* OOPS ************************');
+    console.log("************************* OOPS ************************");
   }
 });
 
 router.get("/logout", function (req, res) {
-
-  req.session.destroy(function(err) {
+  req.session.destroy(function (err) {
     // cannot access session here
     console.log("Can't access session here...");
-  })
+  });
 
   console.log("Logout....");
   res.redirect("http://localhost:3000/login");
@@ -114,6 +119,7 @@ router.post("/user", (req, res) => {
     emailAddress: req.body.emailAddress,
     password: req.body.password,
   });
+
   signedUpUser
     .save()
     .then((data) => {

@@ -68,6 +68,7 @@ app.use(
 
 //Routers
 app.use("/", require("./routes/routes.js"));
+app.use("/", require("./routes/requestRoute.js"));
 
 
 app.use(passport.initialize());
@@ -118,8 +119,6 @@ passport.use(
 );
 
 
-
-
 app.use(function (req, res, next) {
  /* 
   res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
@@ -128,8 +127,8 @@ app.use(function (req, res, next) {
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   */
-  console.log('req.session : ', req.session);
-  console.log('User #####: ', req.session.user);
+  //console.log('req.session : ', req.session);
+  console.log('User #####: ', next);
   next();
 });
 
