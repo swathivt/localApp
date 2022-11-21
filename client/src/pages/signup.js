@@ -1,7 +1,8 @@
  import { useState } from "react";
  
  import axios from 'axios';
- //const Axiosdefaultsadapter = require('../../node_modules/axios/lib/adapters/http.js');
+ import { NavBar } from "../components/sections/navBar.js";
+import { Footer } from "../components/sections/footer";
 
  export const SignUp = () => {
 
@@ -66,6 +67,8 @@
    };
 
    return (
+    <>
+    <NavBar />
      <form className="signUp" onSubmit={handleSubmit}>
        <h3>Sign Up</h3>
         <div className="userDetails">
@@ -114,5 +117,7 @@
           <input className="userInput" type="submit" value="Register" />
         </div>
      </form>
+     <Footer />
+     </>
    );
 };
