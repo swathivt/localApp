@@ -9,9 +9,11 @@ const requestController = require("../controllers/requestController.js");
 
 reqRouter.get("/requests", requestController.getUserRequests) ;
 
-reqRouter.patch("/updateRequest",requestController.updateRequest)
+reqRouter.patch("/updateRequest/:id",requestController.updateRequest)
 
-reqRouter.delete("/deleteRequest",requestController.deleteRequest);
+reqRouter.get("/getUserRequest/:id",requestController.getUserRequest)
+
+reqRouter.delete("/deleteUserRequest/:id",requestController.deleteRequest);
 
 reqRouter.post(
   "/createRequest",
@@ -30,11 +32,11 @@ reqRouter.post(
     //check("cost").equals('')
    // check("amount").isLength({ min: 1 }).withMessage("Please select amount"),
 
-    check("startDate")
-      .isLength({ min: 1 })
-      .withMessage("Please select start date"),
+    // check("startDate")
+    //   .isLength({ min: 1 })
+    //   .withMessage("Please select start date"),
 
-    check("endDate").isLength({ min: 1 }).withMessage("Please select end date"),
+    // check("endDate").isLength({ min: 1 }).withMessage("Please select end date"),
 
     // check("location")
     //   .isLength({ min: 1 })

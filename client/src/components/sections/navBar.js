@@ -6,7 +6,7 @@ export function NavBar() {
   return (
     <div id="header">
         <div>
-          <img className="logo" src="localAppLogo.png" alt="localApp"></img>
+          <img className="logo" src="/localAppLogo.png" alt="localApp"></img>
         </div>
         <div className="headerItems">
           <Link className="menuItem" to="/signUp">
@@ -21,9 +21,9 @@ export function NavBar() {
           <Link className="menuItem" to="/logout">
             Logout
           </Link>
-          <Link className="menuItem" to="/request/create">
-          CreateStudent
-          </Link>
+          {/* <Link className="menuItem" to="/request/create">
+          CreateRequest
+          </Link> */}
           <Link className="menuItem" to="/contactus">
             ContactUs
           </Link>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import { Footer } from "./components/sections/footer.js";
 import { Home } from "./pages/home.js";
 import { Secured } from "./pages/secured.js";
@@ -10,12 +10,11 @@ import { Login } from "./pages/login.js";
 import { MyAccount } from "./pages/user/myAccount.js";
 
 import { Logout } from "./pages/logout.js";
-import { MyRequest}  from "./pages/user/myRequests.js";
-import { UpdateRequest}  from "./pages/user/updateRequest";
+import { MyRequest } from "./pages/user/request/myRequests";
+import { UpdateRequest } from "./pages/user/request/updateRequest";
 
 import { ContactUs } from "./pages/contactus.js";
-import { CreateRequest } from "./pages/request/create.js";
-
+import { CreateRequest } from "./pages/user/request/createRequest.js";
 
 import "./css/style.css";
 
@@ -31,17 +30,10 @@ function App() {
         <Route path="/logIn" element={<Login />} />
         <Route path="/user/myAccount" element={<MyAccount />} />
         <Route path="/user/myRequests" element={<MyRequest />} />
+        <Route path="/user/createRequest" element={<CreateRequest />} />
         <Route path="/user/updateRequest/:id" element={<UpdateRequest />} />
-        
-
-
         <Route path="/logout" element={<Logout />} />
-        <Route path="/request/create" element={<CreateRequest />} />
-
         <Route path="/contactus" element={<ContactUs />} />
-       
-
-        
       </Routes>
 
       {/* <Footer />  */}

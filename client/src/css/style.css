@@ -333,3 +333,8 @@ nav a{
     flex-direction: row;
     justify-content: space-around;
  }
+
+ .tableHeading {
+    cell-padding: 10px;
+
+ }

@@ -12,7 +12,7 @@ const userRequestSchema = new mongoose.Schema({
   endDate: { type: Date },
   signupby: { type: String },
 
-  location: { type: String },
+  locationAddress: { type: String },
   //longitude: { type: String, required: true}, // Future requirement
   //latitude: { type: String, required: true}, // Future requirement
 
