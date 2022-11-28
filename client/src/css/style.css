@@ -57,26 +57,34 @@ a:hover{
 }
 
 li:hover{
-  color:rgb(237, 237, 232);
+  color:hsl(60, 12%, 92%);
   border-bottom: 0.1px solid lightgrey;
   background-color:  rgb(237, 105, 105);
-  height: 50px;
+  height: 70px;
   cursor: pointer;
 }
 .restaurantName{
   margin-left: 5px;
   font-size: large;
+  
 }
-
+/* .restaurantHeading{
+    color:  rgb(237, 105, 105);
+} */
 .restaurantRating{
   margin-left: 10px;
+  font-weight: bold;
 }
 
-a:hover{
+.restaurantItem.a:hover{
   border-bottom: 0.1px solid lightgrey;
   color: rgba(206, 59, 14, 0.836);
   
   cursor: pointer;
+}
+.rating {
+    padding: 10px;
+    
 }
 
 /**************************************Restaurants Listing End ********************************************************************/
@@ -90,6 +98,10 @@ body {
 .container {
     margin: 10px 20px 10px 20px;
     
+}
+
+.heading {
+    text-align: center;
 }
 
 #header {
@@ -338,3 +350,21 @@ nav a{
     cell-padding: 10px;
 
  }
+   /*************************************Common (Create Request & Update Request)********************************************************************/
+    .request{
+        text-align: center;
+    }
+    .smaller-input {
+        font-size: 12px;
+        padding: 2px 5px;
+      }
+
+
+  /*************************************Create Request********************************************************************/
+  .submitButton {
+    margin: 10px;
+  }
+    /*************************************Update Requests********************************************************************/
+.updateButton{
+    margin: 10px;
+}

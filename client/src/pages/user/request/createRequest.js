@@ -8,26 +8,36 @@ import { NavBar } from "../../../components/sections/navBar";
 
 export function CreateRequest(props) {
   const navigate = useNavigate();
-
+  
   const initialState = {
     title: "",
     description: "",
     category: "",
     cost: "Contact",
-    //amount: "",
-    // startDate: "",
-    // endDate: "",
-    locationAddress: "",
+    amount: "",
+     startDate: "",
+     endDate: "",
+     locationAddress: "",
   };
 
   const [userRequest, setUserRequest] = useState(initialState);
-
+  
   //  useEffect();
 
-  function handleChange(event) {
+  function 
+  
+  handleChange(event) {
     console.log("*&*&*&*: " + [event.target.name]);
     setUserRequest({ ...userRequest, [event.target.name]: event.target.value });
   }
+
+//   const dateFromDateString = (dateString) => {
+//     return(new Date(dateString)).format('YYYY-MM-DDT00:00:00.000');
+// };
+
+// const dateForPicker = (dateString) => {
+//   return (new Date(dateString)).format('YYYY-MM-DD')
+// };
 
   function onChangeCost(event) {
     setUserRequest({ ...userRequest, cost: event.target.value });
@@ -47,10 +57,10 @@ export function CreateRequest(props) {
         description: userRequest.description,
         category: userRequest.category,
         cost: userRequest.cost,
-        //amount: this.state.amount,
-        // startDate: userRequest.startDate,
-        // endDate: userRequest.endDate,
-        locationAddress: userRequest.locationAddress,
+        amount: userRequest.amount,
+        startDate: userRequest.startDate,
+         endDate: userRequest.endDate,
+         locationAddress: userRequest.locationAddress,
       };
       console.log("TEST:" + JSON.stringify(userPostRequest));
 
@@ -72,7 +82,7 @@ export function CreateRequest(props) {
     <div>
       <NavBar />
       <Container>
-        <h1>Create Request</h1>
+        <h3 className="request">Create Request</h3>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label>Title:</Form.Label>
@@ -144,21 +154,29 @@ export function CreateRequest(props) {
             />
           </Form.Group>
 
-          {/* <Form.Group>
+          <Form.Group>
               <Form.Label as="legend">Select date:</Form.Label>
             </Form.Group>
             <Form.Group>
               <Form.Label as="legend">Start date</Form.Label>
               <Form.Control
+                size="sm"
+                name="startDate"
                 type="date"
                 value={userRequest.startDate}
                 onChange={handleChange}
+                // type="startDate"
+                // value={startDate ? dateForPicker(startDate) : ''}
+                // onfocus={dateForPicker(startDate)}
+                // placeholder={startDate ? dateForPicker(startDate) : "dd/mm/yyyy"}
+                // onChange={(e) => (dateFromDateString(e.target.value))}
               />
             </Form.Group>
             <Form.Group>
               <Form.Label as="legend">End date</Form.Label>
               <Form.Control
                 type="date"
+                name="endDate"
                 value={userRequest.endDate}
                 onChange={handleChange}
               />
@@ -167,20 +185,21 @@ export function CreateRequest(props) {
               <Form.Label>Add Location:</Form.Label>
               <Form.Control
                 type="locationAddress"
+                name="locationAddress"
                 value={userRequest.locationAddress}
                 onChange={handleChange}
               />
-            </Form.Group> */}
-          <Button variant="success"  type="submit">
-            Update Request
+            </Form.Group>
+          <Button variant="success"  type="submit" className="submitButton">
+            Create
           </Button>
-          <button
-            type="button"
+          <Button
+            type="cancel"
             onClick={handleCancel}
-            className="btn btn-secondary"
+            className="btn btn-secondary cancelButton"
           >
             Cancel
-          </button>
+          </Button>
         </Form>
       </Container>
     </div>

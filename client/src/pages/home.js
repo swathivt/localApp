@@ -15,11 +15,11 @@ export class Home extends React.Component {
       
       <div id="pageContainer">
         <NavBar />
-        {/* <Banner /> */}
+        
         <div className="container">
           {}
-          <h3>Welcome to LocalApp</h3>
-          <Restaurants />
+          <h3 className="heading">Welcome to LocalApp</h3>
+          {/* <Restaurants /> */}
          
 
           

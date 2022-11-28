@@ -13,7 +13,10 @@ const key = "AIzaSyD9RvBHIptwksmmGwzixojAm8FPV9-rVyg";
    const city = 'new+york+city'
    const category = 'burgers'
    //const {data} = await axios.get(
-    const {data} =  axios.get(
+
+   console.log('*****Google Places API: ' + 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=$' + {category} + '+$' + {neighborhood} +  '+$' + {borough} + '+$' + {city} + '&type=restaurant&key=$' + {key});
+   
+   const {data} =  axios.get(
    
 `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${category}+${neighborhood}+${borough}+${city}&type=restaurant&key=${key}`
    )

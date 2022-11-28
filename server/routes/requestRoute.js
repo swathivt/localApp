@@ -9,9 +9,13 @@ const requestController = require("../controllers/requestController.js");
 
 reqRouter.get("/requests", requestController.getUserRequests) ;
 
-reqRouter.patch("/updateRequest/:id",requestController.updateRequest)
+reqRouter.patch("/updateRequest/:id",requestController.updateRequest);
 
-reqRouter.get("/getUserRequest/:id",requestController.getUserRequest)
+reqRouter.get("/getUserRequest/:id",requestController.getUserRequest);
+
+//reqRouter.get("/publishUserRequest/:id",requestController.publishRequest);
+reqRouter.patch("/publishUserRequest/:id",requestController.publishRequest);
+ 
 
 reqRouter.delete("/deleteUserRequest/:id",requestController.deleteRequest);
 

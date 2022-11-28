@@ -65,7 +65,7 @@ exports.updateRequest = (req, res) => {
 /******************************************delete request****************************/
 
 exports.deleteRequest = (req, res) => {
-  console.log("ID vlaue:" + req.params.id);
+  console.log("ID value:" + req.params.id);
   UserRequest.findById(req.params.id, function (err, request) {
     if (!request) {
       res.status(404).send("Request not found");
@@ -79,16 +79,67 @@ exports.deleteRequest = (req, res) => {
         });
     }
   });
-  // console.log("In Deleted Request." + req.params.id);
-  // const usrRequestModel = new UserRequest(req.body);
+};
 
-  // usrRequestModel.usrRequestModel
-  //   .deleteOne({ title: "Ranjith test" })
-  //   .then((data) => {
-  //     console.log("Deleted successfully." + data);
-  //     res.json(data);
-  //   })
-  //   .catch((e) => {
-  //     res.json({ message: e });
-  //   });
+/******************************************publish request****************************/
+
+exports.publishRequest = (req, res) => {
+  console.log("ID value: " + req.params.id);
+
+  UserRequest.findById(req.params.id)
+    .then(function (usrReq) {
+      console.log("returned from DB: " + usrReq);
+      if (usrReq._id != null) {
+        // user request found
+
+        if (usrReq.status == "Draft") {
+          console.log("Request is DRAFT.");
+          //res.status(200).send("User Request found");
+          const now = new Date();
+          UserRequest.updateOne(
+            { _id: usrReq._id },
+            { $set: { status: "Published", updated: now } }
+          )
+            .then(function (count) {
+              console.log(
+                "Updated status pusblished for rows:" + JSON.stringify(count)
+              );
+              res.status(200).send({
+                statusMsg: "Request has been published successfully.",
+                statusCode: "0",
+              });
+            })
+            .catch(function (err) {
+              console.log("Failed to update to Publish from Draft.");
+              res.status(200).send({
+                statusMsg:
+                  "We are unable to publish request. Please try again or contact administrator.",
+                statusCode: "-1",
+              });
+            });
+        } else {
+          console.log(
+            "We can't publish this request as it is not in Draft status."
+          );
+          res.status(200).send({
+            statusMsg: "Only draft requests can be published.",
+            statusCode: "-1",
+          });
+        }
+      } else {
+        console.log("not found ID");
+        res.status(200).send({
+          statusMsg: "Request not found.",
+          statusCode: "-1",
+        });
+      }
+
+      // res.status(200).send("User Request found.");
+    })
+    .catch(function (err) {
+      res.status(200).send({
+        statusMsg: "Request not found.",
+        statusCode: "-1",
+      });
+    });
 };

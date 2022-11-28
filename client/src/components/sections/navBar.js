@@ -27,9 +27,9 @@ export function NavBar() {
           <Link className="menuItem" to="/contactus">
             ContactUs
           </Link>
-          <Link className="menuItem" to="/secured">
+          {/* <Link className="menuItem" to="/secured">
             Secured
-          </Link>
+          </Link> */}
           
           
          </div>

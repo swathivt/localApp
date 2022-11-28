@@ -12,8 +12,6 @@ export const MyRequest = () => {
   const [requests, setRequests] = useState([]);
 
   useEffect(function () {
-   
-
     getRequestsList();
   }, []);
 
@@ -29,7 +27,11 @@ export const MyRequest = () => {
   function handleDeletReq(requestID) {
     console.log("Delete ID: " + requestID);
 
-    console.log("Delete endpoint:" + "http://localhost:5000/deleteUserRequest/" + requestID);
+    console.log(
+      "Delete endpoint:" +
+        "http://localhost:5000/deleteUserRequest/" +
+        requestID
+    );
     const apiMgr = axios.create({ responseType: "json" });
 
     apiMgr
@@ -37,11 +39,43 @@ export const MyRequest = () => {
       .then((response) => {
         console.log("RESPONSE from /user : " + JSON.stringify(response.data));
 
-      apiMgr.get("http://localhost:5000/requests").then((response) => {
-          setRequests(response.data.requests); })
-        .catch (function (error) {
-          console.log("error", error);
-        })
+        apiMgr
+          .get("http://localhost:5000/requests")
+          .then((response) => {
+            setRequests(response.data.requests);
+          })
+          .catch(function (error) {
+            console.log("error", error);
+          });
+      })
+      .catch(function (error) {
+        console.log(error.response.data);
+      });
+  }
+
+  function handlePublish(requestID) {
+    console.log("Publishing ID: " + requestID);
+
+    console.log(
+      "Publish Request endpoint:" +
+        "http://localhost:5000/publishUserRequest/" +
+        requestID
+    );
+    const apiMgr = axios.create({ responseType: "json" });
+
+    apiMgr
+      .patch("http://localhost:5000/publishUserRequest/" + requestID)
+      .then((response) => {
+        console.log("RESPONSE from /user : " + JSON.stringify(response.data));
+
+        apiMgr
+          .get("http://localhost:5000/requests")
+          .then((response) => {
+            setRequests(response.data.requests);
+          })
+          .catch(function (error) {
+            console.log("error", error);
+          });
       })
       .catch(function (error) {
         console.log(error.response.data);
@@ -53,18 +87,17 @@ export const MyRequest = () => {
       <NavBar />
       <Container>
         <div className="requestTable">
+          <div>
+            <h3>My Requests</h3>
+          </div>
           <div className="headerLink">
-            <div>
-              <h3>My Requests</h3>
-            </div>
-
             <div>
               <Button variant="warning" href="/user/createRequest" size="lg">
                 Create Request
               </Button>
             </div>
           </div>
-          <Table striped bordered hover  responsive="sm">
+          <Table striped bordered hover responsive="sm">
             <thead>
               <tr>
                 <th className="TableHeading">Title</th>
@@ -72,12 +105,12 @@ export const MyRequest = () => {
                 <th>Category</th>
 
                 <th>Cost</th>
-                {/* <th>Start Date</th>
-                <th>End Date</th> */}
-                {/* <th>Location</th> */}
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Location</th>
 
-                <th>Status</th>
-                <th colSpan={2}>Actions</th>
+                <th colSpan={1}>Status</th>
+                <th colSpan={1}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -87,15 +120,25 @@ export const MyRequest = () => {
                   <td>{userRequest.description}</td>
                   <td>{userRequest.category}</td>
                   <td>{userRequest.cost}</td>
-                  {/* <td>{userRequest.startDate}</td>
-                  <td>{userRequest.endDate}</td> */}
+                  <td>{userRequest.startDate}</td>
+                  <td>{userRequest.endDate}</td>
+                  <td>{userRequest.locationAddress}</td>
                   <td>{userRequest.status}</td>
                   <td>
+                    {userRequest.status == "Draft" && (
+                      <Button
+                        className=""
+                        varint="success"
+                        onClick={() => {
+                          handlePublish(userRequest._id);
+                        }}
+                      >
+                        Publish
+                      </Button>
+                    )}{" "}
                     <Link to={"/user/updateRequest/" + userRequest._id}>
                       <Button variant="warning">Edit</Button>
-                    </Link>
-                  </td>
-                  <td>
+                    </Link>{" "}
                     <Button
                       variant="danger"
                       onClick={() => {

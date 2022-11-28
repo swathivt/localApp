@@ -7,7 +7,7 @@ const RestaurantListItem = (props) => (
   <li className="restaurantItem">
     <div className="restaurantName">{props.restaurant.name}</div>
     <span className="restaurantRating">{props.restaurant.rating}</span>
-    <span>Rating</span>
+    <span className="rating">Rating</span>
   </li>
 );
 
@@ -20,7 +20,7 @@ export class Restaurants extends React.Component {
   render() {
     return (
       <>
-        <h3>Restaurants </h3>
+        <h4 className="restaurantHeading">Restaurants </h4>
         <ul id="restaurants">{this.restaurantsList()}</ul>
       </>
     );

@@ -22,6 +22,7 @@ Backend: body-parser
          mongodb
          mongoose
          mongoose-findorcreate
+         mongoose-update-versioning
          nodemon
          passport
          passport-google-oauth2
