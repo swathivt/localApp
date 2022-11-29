@@ -2,11 +2,19 @@ import React from "react";
 import { Logo } from "./logo.js";
 import { Link } from "react-router-dom";
 
+
+
+
 export function NavBar() {
+
+
+  
   return (
     <div id="header">
         <div>
-          <img className="logo" src="/localAppLogo.png" alt="localApp"></img>
+          <Link  className="logoLink" to="/">
+            <img className="logo " src="/localAppLogo.png" alt="localApp" ></img>
+          </Link>
         </div>
         <div className="headerItems">
           <Link className="menuItem" to="/signUp">

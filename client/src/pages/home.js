@@ -3,6 +3,8 @@ import axios from "axios";
 import { NavBar } from "../components/sections/navBar.js";
 import { Footer } from "../components/sections/footer.js";
 import { Restaurants } from "../components/restaurants.js";
+import { NearByServices } from "../components/nearByServices.js";
+
 import { Banner } from "../components/banner.js";
 
 
@@ -20,7 +22,7 @@ export class Home extends React.Component {
           {}
           <h3 className="heading">Welcome to LocalApp</h3>
           {/* <Restaurants /> */}
-         
+              <NearByServices />
 
           
         </div>

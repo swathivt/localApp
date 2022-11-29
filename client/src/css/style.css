@@ -34,12 +34,12 @@ body{
 
 }
 
-a:hover{
+/* a:hover{
     border-bottom: 0.1px solid lightgrey;
     color: rgba(206, 59, 14, 0.836);
     
     cursor: pointer;
-  }
+  } */
 
 /**************************************Restaurants Listing Begin ********************************************************************/
 
@@ -116,6 +116,16 @@ body {
 .logo {
     width: 150px;
     height: 50px;
+    
+}
+    
+
+
+.logoLink:hover{
+    text-decoration: none; 
+    color: rgba(206, 59, 14, 0.836);
+    
+    cursor: pointer; 
 }
 
 #headerItems {
@@ -132,6 +142,13 @@ justify-content: center;
     padding: 20px 10px;
 
     font-size: 20px;
+}
+
+.menuItem:hover{
+    
+    color: rgba(206, 59, 14, 0.836);
+    border-bottom: 0.1px solid lightgrey;
+    cursor: pointer;
 }
 
 #banner img {
