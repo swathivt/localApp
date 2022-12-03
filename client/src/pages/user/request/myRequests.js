@@ -85,7 +85,7 @@ export const MyRequest = () => {
   return (
     <div>
       <NavBar />
-      <Container>
+      <Container fluid = "md">
         <div className="requestTable">
           <div>
             <h3>My Requests</h3>
@@ -125,28 +125,37 @@ export const MyRequest = () => {
                   <td>{userRequest.locationAddress}</td>
                   <td>{userRequest.status}</td>
                   <td>
-                    {userRequest.status == "Draft" && (
+                  <div class="btn-toolbar" className="myRequestsButtons" >
+                    <div>
+                      {userRequest.status == "Draft" && (
+                        <Button
+                          className=""
+                          varint="success"
+                          onClick={() => {
+                            handlePublish(userRequest._id);
+                          }}
+                        >
+                          Publish
+                        </Button>
+                      )}{" "}
+                      </div>
+                    <div>
+                      <Link to={"/user/updateRequest/" + userRequest._id}>
+                        <Button className="" variant="warning">Edit</Button>
+                      </Link>{" "}
+                    </div>
+                    <div>
                       <Button
                         className=""
-                        varint="success"
+                        variant="danger"
                         onClick={() => {
-                          handlePublish(userRequest._id);
+                          handleDeletReq(userRequest._id);
                         }}
                       >
-                        Publish
+                        Delete
                       </Button>
-                    )}{" "}
-                    <Link to={"/user/updateRequest/" + userRequest._id}>
-                      <Button variant="warning">Edit</Button>
-                    </Link>{" "}
-                    <Button
-                      variant="danger"
-                      onClick={() => {
-                        handleDeletReq(userRequest._id);
-                      }}
-                    >
-                      Delete
-                    </Button>
+                    </div>
+                    </div>
                   </td>
                 </tr>
               ))}

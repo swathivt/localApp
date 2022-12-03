@@ -115,6 +115,7 @@ exports.publishRequest = (req, res) => {
                 statusMsg:
                   "We are unable to publish request. Please try again or contact administrator.",
                 statusCode: "-1",
+
               });
             });
         } else {
@@ -140,6 +141,57 @@ exports.publishRequest = (req, res) => {
       res.status(200).send({
         statusMsg: "Request not found.",
         statusCode: "-1",
+      });
+    });
+};
+/****************************Return People requests and excluding login user requests****************************/
+exports.getOtherPeopleRequests = (req, res) => {
+  const filter = { userName: { $ne: "svanc21211@gmail.com" } };
+  UserRequest.find(filter)
+    .then(function (reqResults) {
+      res.status(200).json({
+        statusCode: "0",
+        statusMsg: "Get Other People Requests operation successful.",
+        reqResults: reqResults,
+      });
+      console.log("Return Other People Requests" + reqResults.length);
+    })
+    .catch(function (error) {
+      console.log("Failed to retrieve Other People Requests: " + error);
+      res.status(200).json({
+        statusCode: "-1",
+        statusMsg: "Failed to retrieve Other People Requests.",
+        reqResults: {},
+      });
+    });
+};
+
+/****************************Return People requests and excluding login user requests by Request Type****************************/
+exports.getOtherPeopleRequestsByReqType = (req, res) => {
+  console.log("Request/Category value: " + req.params.requestType);
+
+  const filter = {
+    category: { $eq: req.params.requestType },
+    userName: { $ne: "svanc21211@gmail.com" },
+  };
+  UserRequest.find(filter)
+    .then(function (reqResults) {
+      res.status(200).json({
+        statusCode: "0",
+        statusMsg:
+          "Get Other People Requests by RequestType operation successful.",
+        reqResults: reqResults,
+      });
+      console.log("Return Other People Requests" + reqResults.length);
+    })
+    .catch(function (error) {
+      console.log(
+        "Failed to retrieve Other People Requests by RequestType: " + error
+      );
+      res.status(200).json({
+        statusCode: "-1",
+        statusMsg: "Failed to retrieve Other People Requests by RequestType.",
+        reqResults: {},
       });
     });
 };

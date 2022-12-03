@@ -25,7 +25,7 @@ export class Footer extends React.Component {
                     <div className="connect">
                         {mediaLinks}
                     </div>
-                    <p>© 2023 Freeeze. All Rights Reserved.</p> 
+                    <p>© 2023 LocalApp. All Rights Reserved.</p> 
                     <div style={{textAlign : "center"}} id='wix'></div>
                     
 

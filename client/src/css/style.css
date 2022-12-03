@@ -108,7 +108,7 @@ body {
 	display: flex;
     flex-direction: row;
 	justify-content: space-between;
-    background-color: rgb(106, 129, 147);
+    background-color: rgba(12,95,125);
     padding: 30px;
     
 }
@@ -146,7 +146,7 @@ justify-content: center;
 
 .menuItem:hover{
     
-    color: rgba(206, 59, 14, 0.836);
+    color: #eaae07;
     border-bottom: 0.1px solid lightgrey;
     cursor: pointer;
 }
@@ -204,7 +204,7 @@ justify-content: center;
     text-align: center;
     height: 140px;
     width: 100%;
-    background-color: rgb(106, 129, 147);
+    background-color: rgba(12,95,125);
     color: white;
   
 }
@@ -342,13 +342,43 @@ nav a{
   }
 
 /**************************************MyAccount********************************************************************/
+
+.myAccountContent {
+     display: flex; 
+    
+     /* align-items: center;
+     justify-content: center;
+     vertical-align: middle; */
+
+    /* class="h-100 d-flex align-items-center justify-content-center" */
+}
+.myAccountLink {
+    display: flex;
+    justify-content: center;
+    column-gap: 40PX;
+    background-color: rgb(106, 129, 147);
+    margin: 10px;
+    padding: 50px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+}
+
+
+#preferenceLink{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
  
-#myAccountLinks {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- }
 
  /*************************************MyRequests********************************************************************/
  .requestTable{
@@ -367,6 +397,10 @@ nav a{
     cell-padding: 10px;
 
  }
+ .myRequestsButtons {
+    display:flex;
+    column-gap: 5px ;
+ }
    /*************************************Common (Create Request & Update Request)********************************************************************/
     .request{
         text-align: center;
@@ -381,7 +415,43 @@ nav a{
   .submitButton {
     margin: 10px;
   }
-    /*************************************Update Requests********************************************************************/
+    
+  /*************************************Update Requests********************************************************************/
 .updateButton{
     margin: 10px;
+}
+   
+
+/*************************************near By Requests********************************************************************/
+.pageTitle{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #eaae07;
+}
+
+.listItemHeader {
+    background-color: #e1e1e1;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding: 20px;
+    font-size: large;
+}
+.listItem {
+    background: #f1f1f1 !important;
+    margin: 5px;
+   
+  
+}
+.listItemContent{
+    padding: 8px;
+}
+/* .listItemHeader:hover {
+     background-color: rgb(13, 136, 180);
+     color: #f1f1f1;
+} */
+
+.listItem:hover {
+    background-color: rgb(13, 136, 180);
+    border:rgb(13, 136, 180) 1px solid;
+
 }
