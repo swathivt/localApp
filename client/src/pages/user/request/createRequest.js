@@ -81,7 +81,7 @@ export function CreateRequest(props) {
   return (
     <div>
       <NavBar />
-      <Container>
+      <Container fluid="md">
         <h3 className="request">Create Request</h3>
         <Form onSubmit={handleSubmit}>
           <Form.Group>

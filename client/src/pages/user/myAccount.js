@@ -1,6 +1,8 @@
 import { NavBar } from "../../components/sections/navBar";
 import { Footer } from "../../components/sections/footer.js";
 
+import { Container } from "react-bootstrap";
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,14 +11,22 @@ export class MyAccount extends Component {
     return (
       <>
         <NavBar />
-        <ul>
-          <div id="myAccountLinks">
-            <Link className="">My Preferences</Link>
-            <Link to="/user/myRequests">My Requests</Link>
-            <Link>My Events  </Link>
-            <Link>My Services</Link>
+        <Container>
+          <div className="myAccountContent">
+            <div className="btn-toolbar">
+              <Link className="myAccountLink">My Preferences</Link>
+              <Link className="myAccountLink" to="/user/myRequests">
+                My Requests**
+              </Link>
+            </div>
+            <div className="btn-toolbar">
+              <Link className="myAccountLink">My Events </Link>
+              <Link className="myAccountLink" to="/user/myRequests">
+                My Services
+              </Link>
+            </div>
           </div>
-        </ul>
+        </Container>
         <Footer />
       </>
     );

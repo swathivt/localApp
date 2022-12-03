@@ -16,6 +16,13 @@ import { UpdateRequest } from "./pages/user/request/updateRequest";
 import { ContactUs } from "./pages/contactus.js";
 import { CreateRequest } from "./pages/user/request/createRequest.js";
 
+import {NearByServicesByServiceType} from "./pages/services/nearByServicesByServiceType.js";
+import {NearByServices} from "./pages/services/nearByServices.js";
+
+import {NearByRequestsByRequestType} from "./pages/requests/nearByRequestsByRequestType.js";
+import {NearByRequests} from "./pages/requests/nearByRequests.js";
+
+
 import "./css/style.css";
 
 function App() {
@@ -34,6 +41,12 @@ function App() {
         <Route path="/user/updateRequest/:id" element={<UpdateRequest />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/contactus" element={<ContactUs />} />
+        
+        <Route path="/services/nearByServicesByServiceType/:serviceType" element={<NearByServicesByServiceType />} />
+        <Route path="/services/nearByServices" element={<NearByServices />} />
+
+        <Route path="/requests/nearByRequestsByRequestType/:requestType" element={<NearByRequestsByRequestType />} />
+        <Route path="/requests/nearByRequests" element={<NearByRequests />} />
       </Routes>
 
       {/* <Footer />  */}

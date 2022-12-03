@@ -15,6 +15,10 @@ reqRouter.get("/getUserRequest/:id",requestController.getUserRequest);
 
 //reqRouter.get("/publishUserRequest/:id",requestController.publishRequest);
 reqRouter.patch("/publishUserRequest/:id",requestController.publishRequest);
+
+reqRouter.get("/getOtherPeopleRequests", requestController.getOtherPeopleRequests);
+
+reqRouter.get("/getOtherPeopleRequestsByReqType/:requestType", requestController.getOtherPeopleRequestsByReqType);
  
 
 reqRouter.delete("/deleteUserRequest/:id",requestController.deleteRequest);
