@@ -18,9 +18,9 @@ export class Home extends React.Component {
           <div className="pageTitle">
             <h1>Welcome to LocalApp</h1>
           </div>
-          {/* <div style={{ marginTop: 50 }}>
+          <div style={{ marginTop: 50 }}>
             <RestaurantsComp />
-          </div> */}
+          </div>
           <hr/>
           <div style={{ marginTop: 50 }}>
             <NearByRequestsComp />
