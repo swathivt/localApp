@@ -2,6 +2,9 @@
 
 /********************************************************Registration Page****************************************/
 body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: hsl(0, 0%, 95%);  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
    /* background: linear-gradient(to right, #2c3e50, #bdc3c7);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -34,12 +37,24 @@ body{
 
 }
 
-/* a:hover{
-    border-bottom: 0.1px solid lightgrey;
-    color: rgba(206, 59, 14, 0.836);
+a {
+    /* border-bottom: 0.1px solid lightgrey; */
+    /* color: rgb(238, 62, 56); */
+    /* color: #eaae07; */
     
-    cursor: pointer;
-  } */
+    /* cursor: pointer; */
+    text-decoration: none;
+  } 
+
+ a:hover{
+    /* border-bottom: 0.1px solid lightgrey; */
+    /* color: rgba(206, 59, 14, 0.836); */
+    /* color: rgb(234, 174, 7); */
+    color: rgb(238, 62, 56);
+    
+    /* cursor: pointer; */
+    text-decoration: none;
+  } 
 
 /**************************************Restaurants Listing Begin ********************************************************************/
 
@@ -47,25 +62,29 @@ body{
   
   text-decoration: none;
   list-style-type: none;
-  padding-left: 30px;
-  border-bottom: 0.1px solid rgb(144, 143, 143);
+  /* padding-left: 30px; */
+  /* border: 0.1px solid rgb(144, 143, 143); */
 
-  background-color: rgb(248, 243, 243);
+  /* margin:100px;  */
+
+  background-color:  rgb(241, 241, 241);
  
   padding: 5px;
   margin: 10px;
 }
 
-li:hover{
+/* li:hover{
   color:hsl(60, 12%, 92%);
   border-bottom: 0.1px solid lightgrey;
   background-color:  rgb(237, 105, 105);
   height: 70px;
   cursor: pointer;
-}
+} */
 .restaurantName{
   margin-left: 5px;
   font-size: large;
+  font-weight: 500;
+  color: #737373;
   
 }
 /* .restaurantHeading{
@@ -75,6 +94,10 @@ li:hover{
   margin-left: 10px;
   font-weight: bold;
 }
+
+.ratingStar{
+  color: #f3b408;
+  }
 
 .restaurantItem.a:hover{
   border-bottom: 0.1px solid lightgrey;
@@ -114,17 +137,15 @@ body {
 }
 
 .logo {
-    width: 150px;
-    height: 50px;
-    
+    width: 75px;
+    height: 75px;
 }
     
 
 
 .logoLink:hover{
     text-decoration: none; 
-    color: rgba(206, 59, 14, 0.836);
-    
+    color: rgba(238, 62, 56);
     cursor: pointer; 
 }
 
@@ -146,7 +167,8 @@ justify-content: center;
 
 .menuItem:hover{
     
-    color: #eaae07;
+    /* color: #eaae07; */
+    color: rgb(238, 62, 56);
     border-bottom: 0.1px solid lightgrey;
     cursor: pointer;
 }
@@ -197,12 +219,32 @@ justify-content: center;
 /**************************************footer********************************************************************/
 
 
-#footer {
+/* #footer {
     position: fixed;
     left: 0;
     bottom: 0;
     text-align: center;
     height: 140px;
+    width: 100%;
+    background-color: rgba(12,95,125);
+    color: white;
+  
+} */
+
+#footer {
+    margin-top: auto;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    flex-direction: column;
+       /* position: relative;
+    left: 0;
+    
+
+    left: 0;
+    bottom: 0; */
+    text-align: center;
+    /* height: 140px; */
     width: 100%;
     background-color: rgba(12,95,125);
     color: white;
@@ -356,15 +398,26 @@ nav a{
     display: flex;
     justify-content: center;
     column-gap: 40PX;
-    background-color: rgb(106, 129, 147);
-    margin: 10px;
-    padding: 50px;
+    /* background-color: rgb(106, 129, 147); */
+    border: 2px solid rgb(238, 62, 56);
+    /* margin: 10px; */
+    margin: 50px 100px 50px 100px;
+    padding: 50px 100px 50px 100px;
     font-size: 30px;
-    color: white;
+    /* color: white; */
+    color:  rgba(12,95,125);;
+    font-weight: bold;
     text-decoration: none;
-    width: 50%;
+    width: 80%;
     height: auto;
     border-radius: 15px;
+}
+
+.myAccountLink:hover {
+    border: 1px solid rgb(238, 62, 56);
+    background-color: rgb(180, 201, 209);
+    color: rgb(238, 62, 56);
+    font-weight: bold;
 }
 
 
@@ -386,11 +439,11 @@ nav a{
     flex-direction: column;
     
  }
+
  .headerLink {
     display: flex;
-    margin-bottom: 50px;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
  }
 
  .tableHeading {
@@ -401,6 +454,28 @@ nav a{
     display:flex;
     column-gap: 5px ;
  }
+ .publishButton, .deleteButton, .editButton, .buttonLA {
+    /* border: 1px solid rgb(171, 168, 168); */
+    /* border: 2px solid rgb(238, 62, 56); */
+    border: 2px solid rgba(12,95,125);
+    color:  rgba(12,95,125);;
+    font-weight: bold;
+ }
+
+ .publishButton:hover, .deleteButton:hover, .editButton:hover, .buttonLA:hover{
+    /* border: 1px solid #eaae07; */
+    /* background-color: rgb(13, 136, 180); */
+    border: 1px solid rgb(238, 62, 56);
+    background-color: rgb(180, 201, 209);
+    color: rgb(238, 62, 56);
+    
+    font-weight: bold;
+ }
+
+ /* My Account buttons */
+ 
+
+ 
    /*************************************Common (Create Request & Update Request)********************************************************************/
     .request{
         text-align: center;
@@ -426,7 +501,12 @@ nav a{
 .pageTitle{
     margin-top: 30px;
     margin-bottom: 30px;
-    color: #eaae07;
+    /* color: #eaae07; */
+    color: rgb(238, 62, 56)
+}
+
+.componentTitle {
+    margin-bottom: 20px;
 }
 
 .listItemHeader {
@@ -455,3 +535,45 @@ nav a{
     border:rgb(13, 136, 180) 1px solid;
 
 }
+
+/*************************************near By Requests Component********************************************************************/
+.businessType{
+    background-color: rgb(46, 142, 176);
+    color: #FFFFFF;
+}
+
+.businessTypeItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    /* color: #eaae07; */
+    color: dodgerblue;
+}
+
+.businessTypeItemName {
+    font-weight: bold;
+    /* color: rgb(255, 101, 30); */
+}
+
+
+/* .form-inline {
+    width: 100%;
+  }
+  
+  .form-group {
+    width: 90%;
+  }
+  
+  .input-group {
+    width: 90% !important;
+  }
+  
+  .form-control {
+    width: 50% !important;
+  }
+
+  span.input-group-addon {
+    width: 50px !important;
+  } */

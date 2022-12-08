@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { json, useParams, useNavigate } from "react-router-dom";
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { Container, Form, Button, Row, Col, Stack } from "react-bootstrap";
 
 import { Footer } from "../../../components/sections/footer";
 import { NavBar } from "../../../components/sections/navBar";
@@ -89,10 +89,12 @@ export function UpdateRequest(props) {
   return (
     <div>
       <NavBar />
-      <Container>
-        <h3 className="request">Edit Request</h3>
-
-        <Form onSubmit={handleSubmit}>
+      <Container fluid="md">
+        {/* <h3 className="request">Edit Request</h3> */}
+        <div className="pageTitle">
+          <h1>Edit Request</h1>
+        </div>
+        <Form onSubmit={handleSubmit} className="w-50">
           <Form.Group>
             <Form.Label>Title:</Form.Label>
             <Form.Control
@@ -169,7 +171,7 @@ export function UpdateRequest(props) {
           </Form.Group>
           <Form.Group>
             <Col xs="auto">
-              <Form.Label as="legend">Start date</Form.Label>
+              <Form.Label >Start date</Form.Label>
               <Form.Control
                 type="date"
                 name="startDate"
@@ -179,36 +181,40 @@ export function UpdateRequest(props) {
             </Col>
           </Form.Group>
           <Form.Group>
-            <Form.Label as="legend">End date</Form.Label>
+            <Form.Label >End date</Form.Label>
             <Form.Control
-              className="smaller-input"
+             
               type="date"
               name="endDate"
               value={userRequest.endDate}
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group>
+          <Form.Group style={{marginTop:10}}>
             <Form.Label>Add Location:</Form.Label>
             <Form.Control
-              className="smaller-input"
               type="locationAddress"
               name="locationAddress"
               value={userRequest.locationAddress}
               onChange={handleChange}
             />
           </Form.Group>
-          <Button variant="success" type="submit" className="updateButton">
-            Update Request
+
+          <div className="headerLink" style={{margin:20 }}>
+            <Stack direction="horizontal" gap={3}>
+          <Button variant="flat" type="submit" className="buttonLA">
+            Update
           </Button>
 
-          <button
+          <Button
             type="button"
+            variant="flat"
             onClick={handleCancel}
-            className="btn btn-secondary"
-          >
+            className="buttonLA">
             Cancel
-          </button>
+          </Button>
+          </Stack>
+          </div>
         </Form>
       </Container>
       {/* <Footer /> */}

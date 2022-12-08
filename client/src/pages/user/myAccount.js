@@ -1,7 +1,7 @@
 import { NavBar } from "../../components/sections/navBar";
 import { Footer } from "../../components/sections/footer.js";
 
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -11,12 +11,13 @@ export class MyAccount extends Component {
     return (
       <>
         <NavBar />
-        <Container>
+        <Container fluid="md" >
+          <Row>
           <div className="myAccountContent">
             <div className="btn-toolbar">
               <Link className="myAccountLink">My Preferences</Link>
               <Link className="myAccountLink" to="/user/myRequests">
-                My Requests**
+                My Requests
               </Link>
             </div>
             <div className="btn-toolbar">
@@ -26,6 +27,7 @@ export class MyAccount extends Component {
               </Link>
             </div>
           </div>
+          </Row>
         </Container>
         <Footer />
       </>

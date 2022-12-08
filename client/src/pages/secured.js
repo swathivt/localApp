@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import { NavBar } from "../components/sections/navBar.js";
 import { Footer } from "../components/sections/footer.js";
-import { Restaurants } from "../components/restaurants.js";
+import { Restaurants } from "../components/restaurantsComp.js";
 import { Banner } from "../components/banner.js";
 import { Login } from "./login.js";
 

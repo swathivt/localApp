@@ -174,6 +174,7 @@ exports.getOtherPeopleRequestsByReqType = (req, res) => {
     category: { $eq: req.params.requestType },
     userName: { $ne: "svanc21211@gmail.com" },
   };
+  
   UserRequest.find(filter)
     .then(function (reqResults) {
       res.status(200).json({

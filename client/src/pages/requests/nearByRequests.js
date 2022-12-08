@@ -7,7 +7,7 @@ import axios from "axios";
 import { NavBar } from "../../components/sections/navBar";
 import { Footer } from "../../components/sections/footer";
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export function NearByRequests() {
@@ -40,6 +40,11 @@ export function NearByRequests() {
         <div className="pageTitle">
           <h1>Near By Requests</h1>
         </div>
+        <div className="headerLink">
+            <Button className="buttonLA" variant="flat" href="/" size="lg">
+              <FontAwesomeIcon icon="fa-solid fa-angles-left" /> Back
+            </Button>
+          </div>
         {usrRequests.map((usrRequest) => ( 
           <>
             {/* <hr /> */}
@@ -52,7 +57,7 @@ export function NearByRequests() {
                 <div className="listItemContent">
                   <Row>
                     <Col md={4}>
-                      category: 
+                    <strong>category:</strong>
 
                       {usrRequest.category}
                     </Col>

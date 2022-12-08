@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import './fontawesome.js';
 import { Footer } from "./components/sections/footer.js";
 import { Home } from "./pages/home.js";
 import { Secured } from "./pages/secured.js";
@@ -21,6 +22,7 @@ import {NearByServices} from "./pages/services/nearByServices.js";
 
 import {NearByRequestsByRequestType} from "./pages/requests/nearByRequestsByRequestType.js";
 import {NearByRequests} from "./pages/requests/nearByRequests.js";
+import {Restaurants} from "./pages/restaurants/restaurants.js";
 
 
 import "./css/style.css";
@@ -47,6 +49,7 @@ function App() {
 
         <Route path="/requests/nearByRequestsByRequestType/:requestType" element={<NearByRequestsByRequestType />} />
         <Route path="/requests/nearByRequests" element={<NearByRequests />} />
+        <Route path="/restaurants" element={<Restaurants/>} />
       </Routes>
 
       {/* <Footer />  */}

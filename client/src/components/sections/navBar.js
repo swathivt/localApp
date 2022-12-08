@@ -13,7 +13,7 @@ export function NavBar() {
     <div id="header">
         <div>
           <Link  className="logoLink" to="/">
-            <img className="logo " src="/localAppLogo.png" alt="localApp" ></img>
+            <img className="logo " src="/localAppLogoNew.png" alt="localApp" ></img>
           </Link>
         </div>
         <div className="headerItems">

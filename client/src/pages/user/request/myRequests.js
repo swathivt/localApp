@@ -87,15 +87,17 @@ export const MyRequest = () => {
       <NavBar />
       <Container fluid = "md">
         <div className="requestTable">
-          <div>
-            <h3>My Requests</h3>
-          </div>
-          <div className="headerLink">
+        <div className="pageTitle">
+          <h1>My Requests</h1>
+        </div>
+        
+          <div className="headerLink" >
             <div>
-              <Button variant="warning" href="/user/createRequest" size="lg">
+              <Button className="buttonLA" variant="flat" href="/user/createRequest" size="lg">
                 Create Request
               </Button>
             </div>
+           
           </div>
           <Table striped bordered hover responsive="sm">
             <thead>
@@ -129,8 +131,8 @@ export const MyRequest = () => {
                     <div>
                       {userRequest.status == "Draft" && (
                         <Button
-                          className=""
-                          varint="success"
+                          className="publishButton"
+                          variant="flat"
                           onClick={() => {
                             handlePublish(userRequest._id);
                           }}
@@ -141,13 +143,13 @@ export const MyRequest = () => {
                       </div>
                     <div>
                       <Link to={"/user/updateRequest/" + userRequest._id}>
-                        <Button className="" variant="warning">Edit</Button>
+                        <Button className="editButton" variant="flat">Update</Button>
                       </Link>{" "}
                     </div>
                     <div>
                       <Button
-                        className=""
-                        variant="danger"
+                        className="deleteButton"
+                        variant="flat"
                         onClick={() => {
                           handleDeletReq(userRequest._id);
                         }}
